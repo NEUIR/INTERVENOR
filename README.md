@@ -26,6 +26,7 @@ pip install -e human-eval
 ## Reproduce
 
 ### 1.Code Generation
+Set your API KEY in [this](https://github.com/NEUIR/INTERVENOR/blob/532c9c26d4845d995b5d0cf38d9dcb32fe70b712/agents/gpt/gpt_wrapper.py#L9).
 
 First, we need to generate initial code based on natural language descriptions.
 
