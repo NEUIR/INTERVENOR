@@ -1,8 +1,4 @@
-
-
-<div style="text-align: center">
-<span style="text-align: center; display: block; font-size: 2em; margin-top: -10px;font-weight: bold;">INTERVENOR</span>
-</div>
+<h1 style="text-align: center;">INTERVENOR</h1>
 
 <img src="assets/title.jpg" width="200px">
 
@@ -10,9 +6,10 @@
  <a href="##Requirements"> Requirements</a> •
  <a href="##Reproduce INTERVENOR">Reproduce INTERVENOR</a> •
  <a href="##Prompts">Prompts</a> •
- <a href="##Citation">Citation</a> •
 </p>
 
+
+</div>
 
 Source code for paper: <a href='https://arxiv.org/abs/2311.09868'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 [INTERVENOR : Prompt the Coding Ability of Large Language Models with the Interactive Chain of Repairing](https://arxiv.org/abs/2311.09868)
