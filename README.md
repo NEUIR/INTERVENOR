@@ -1,10 +1,27 @@
 # INTERVENOR
+
+```
+<div align="center">
+
+<img src="assets/title.jpg" width="400px">
+
+<p align="center">
+ <a href="##Requirements"> Requirements</a> •
+ <a href="##Reproduce INTERVENOR">Reproduce INTERVENOR</a> •
+ <a href="##Prompts">Prompts</a> •
+</p>
+
+</div>
+```
+
+
+
 Source code for paper: <a href='https://arxiv.org/abs/2311.09868'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 [INTERVENOR : Prompt the Coding Ability of Large Language Models with the Interactive Chain of Repairing](https://arxiv.org/abs/2311.09868)
 
 
 
-## Requirements
+## 
 
 Install dependencies:
 
