@@ -1,0 +1,71 @@
+from typing import List
+def has_close_elements(numbers: List[float], threshold: float) -> bool:
+    """ Check if in given list of numbers, are any two numbers closer to each other than
+    given threshold.
+    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)
+    False
+    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)
+    True
+    Let's complete the following code step by step.
+    """
+    # Step 1: Create a variable to store the result
+    result = False
+    # Step 2: Loop through the list of numbers
+    for i in range(len(numbers)):
+        # Step 3: Check if the current number is within the threshold of any other number in the list
+        for j in range(i+1, len(numbers)):
+            if abs(numbers[i] - numbers[j]) <= threshold:
+                # Step 4: If the condition is met, set the result to True and break out of the loop
+                result = True
+                break
+        # Step 5: If the result is already True, break out of the loop
+        if result:
+            break
+
+    # Step 6: Return the result
+    return result
+
+from typing import List
+def rescale_to_unit(numbers: List[float]) -> List[float]:
+    """ Given list of numbers (of at least two elements), apply a linear transform to that list,
+    such that the smallest number will become 0 and the largest will become 1
+    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])
+    [0.0, 0.25, 0.5, 0.75, 1.0]
+    Let's complete the following code step by step.
+    """
+    # Step 1: Find the smallest and largest numbers in the list
+    smallest = min(numbers)
+    largest = max(numbers)
+    # Step 2: Calculate the difference between the largest and smallest numbers
+    difference = largest - smallest
+    # Step 3: Create a new list to store the rescaled numbers
+    rescaled_numbers = []
+    # Step 4: Loop through each number in the original list
+    for number in numbers:
+        # Step 5: Apply the linear transform to each number
+        rescaled_number = (number - smallest) / difference
+        # Step 6: Add the rescaled number to the new list
+        rescaled_numbers.append(rescaled_number)
+    # Step 7: Return the new list
+    return rescaled_numbers
+
+def strlen(string: str) -> int:
+    """ Return length of given string
+    >>> strlen('')
+    0
+    >>> strlen('abc')
+    3
+    Let's complete the following code step by step.
+    """
+    # 1. Initialize a variable to store the length of the string
+    length = 0
+    # 2. Use a for loop to iterate through each character in the string
+    for char in string:
+        # 3. Increment the length variable by 1 for each character
+        length += 1
+    # 4. Return the length variable
+    return length
+
+{task description}
+
+

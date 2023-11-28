@@ -1,0 +1,11 @@
+You are a student assistant with excellent code repair capabilities. You can attempt to fix the bugs in the above code based on the provided error information and the method for modification. Please make sure to carefully check every potentially problematic area and make appropriate adjustments and corrections.
+
+- buggy code:
+%%%buggy_code%%%
+
+When testing the above code, errors occurred: %%%error_message%%% , some test cases did not pass! Please check the implementation of the function and fix the code based on the modification method.
+
+- modification method:
+%%%repair_method%%%
+
+Correct the code:

@@ -1,0 +1,137 @@
+You are a master at debugging code. Please correct the following buggy code.
+
+<buggy_code>
+/*
+Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+separate those group into separate strings and return the vector of those.
+Separate groups are balanced (each open brace is properly closed) and not nested within each other
+Ignore any spaces in the input string.
+>>> separate_paren_groups("( ) (( )) (( )( ))")
+{"()", "(())", "(()())"}
+*/
+#include<stdio.h>
+#include<vector>
+#include<string>
+using namespace std;
+vector<string> separate_paren_groups(string paren_string){
+    vector<string> all_parens;
+    string current_paren;
+    int level=0;
+    char chr;
+    int i;
+    for (i=0;i<paren_string.length();i++)
+    {
+        chr=paren_string[i];
+        if (chr==')')
+        {
+        level+=1;
+        current_paren+=chr;
+        }
+        if (chr=='(')
+        {
+            level-=1;
+            current_paren+=chr;
+            if (level==0){
+                all_parens.push_back(current_paren);
+                current_paren="";
+            }
+        }
+    }
+    return all_parens;
+}
+</buggy_code>
+
+<repair_method>
+The error in the original separate_paren_groups function lies in the handling of parentheses. The function incorrectly increments current_depth when encountering a closing parenthesis and decrements it when encountering an opening parenthesis. This leads to an incorrect count of the depth of parentheses.
+To fix the issue, we should increment current_depth when an opening parenthesis is encountered and decrement it when a closing parenthesis is encountered. This ensures that the depth is properly tracked, and we append characters to current_string based on the correct conditions.
+</repair_method>
+
+<correct_code>
+/*
+Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+separate those group into separate strings and return the vector of those.
+Separate groups are balanced (each open brace is properly closed) and not nested within each other
+Ignore any spaces in the input string.
+>>> separate_paren_groups("( ) (( )) (( )( ))")
+{"()", "(())", "(()())"}
+*/
+#include<stdio.h>
+#include<vector>
+#include<string>
+using namespace std;
+vector<string> separate_paren_groups(string paren_string){
+    vector<string> all_parens;
+    string current_paren;
+    int level=0;
+    char chr;
+    int i;
+    for (i=0;i<paren_string.length();i++)
+    {
+        chr=paren_string[i];
+        if (chr=='(')
+        {
+        level+=1;
+        current_paren+=chr;
+        }
+        if (chr==')')
+        {
+            level-=1;
+            current_paren+=chr;
+            if (level==0){
+                all_parens.push_back(current_paren);
+                current_paren="";
+            }
+        }
+    }
+    return all_parens;
+}
+</correct_code>
+
+<buggy_code>
+/*
+Given a positive floating point number, it can be decomposed into
+and integer part (largest integer smaller than given number) and decimals
+(leftover part always smaller than 1).
+
+Return the decimal part of the number.
+>>> truncate_number(3.5)
+0.5
+*/
+#include<stdio.h>
+#include<math.h>
+using namespace std;
+float truncate_number(float number){
+    return number % int(number);
+}
+</buggy_code>
+
+<repair_method>
+The error in the original C++ truncate_number function is that it attempts to use the modulo % operator with a float and an integer, which is not allowed in C++. To fix the issue, we should convert the float to an int before applying the modulo operation. Additionally, the correct way to obtain the decimal part of a floating-point number is to subtract the integer part from the original number.
+To fix the issue:
+Convert the float to an int using the int() function.
+Subtract the integer part from the original number to get the decimal part.
+</repair_method>
+
+<correct_code>
+/*
+Given a positive floating point number, it can be decomposed into
+and integer part (largest integer smaller than given number) and decimals
+(leftover part always smaller than 1).
+
+Return the decimal part of the number.
+>>> truncate_number(3.5)
+0.5
+*/
+#include<stdio.h>
+#include<math.h>
+using namespace std;
+float truncate_number(float number){
+    return number-int(number);
+}
+</correct_code>
+
+<buggy_code>
+{buggy_code}
+</buggy_code>
+
+<repair_method>

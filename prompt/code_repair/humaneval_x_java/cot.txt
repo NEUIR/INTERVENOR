@@ -1,0 +1,133 @@
+You are a master at debugging code. Please correct the following buggy code.
+
+<buggy_code>
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+    separate those group into separate strings and return the list of those.
+    Separate groups are balanced (each open brace is properly closed) and not nested within each other
+    Ignore any spaces in the input string.
+    >>> separateParenGroups("( ) (( )) (( )( ))")
+    ["()", "(())", "(()())"]
+     */
+    public List<String> separateParenGroups(String paren_string) {
+           List<String> result = new ArrayList<>();
+        StringBuilder current_string = new StringBuilder();
+        int current_depth = 0;
+
+        for (char c : paren_string.toCharArray()) {
+            if (c == ')') {
+                current_depth += 1;
+                current_string.append(c);
+            } else if (c == '(') {
+                current_depth -= 1;
+                current_string.append(c);
+
+                if (current_depth == 0) {
+                    result.add(current_string.toString());
+                    current_string.setLength(0);
+                }
+            }
+        }
+        return result;
+
+    }
+}
+</buggy_code>
+
+<repair_method>
+The error in the original separate_paren_groups function lies in the handling of parentheses. The function incorrectly increments current_depth when encountering a closing parenthesis and decrements it when encountering an opening parenthesis. This leads to an incorrect count of the depth of parentheses.
+To fix the issue, we should increment current_depth when an opening parenthesis is encountered and decrement it when a closing parenthesis is encountered. This ensures that the depth is properly tracked, and we append characters to current_string based on the correct conditions.
+</repair_method>
+
+<correct_code>
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+    separate those group into separate strings and return the list of those.
+    Separate groups are balanced (each open brace is properly closed) and not nested within each other
+    Ignore any spaces in the input string.
+    >>> separateParenGroups("( ) (( )) (( )( ))")
+    ["()", "(())", "(()())"]
+     */
+    public List<String> separateParenGroups(String paren_string) {
+           List<String> result = new ArrayList<>();
+        StringBuilder current_string = new StringBuilder();
+        int current_depth = 0;
+
+        for (char c : paren_string.toCharArray()) {
+            if (c == '(') {
+                current_depth += 1;
+                current_string.append(c);
+            } else if (c == ')') {
+                current_depth -= 1;
+                current_string.append(c);
+
+                if (current_depth == 0) {
+                    result.add(current_string.toString());
+                    current_string.setLength(0);
+                }
+            }
+        }
+        return result;
+
+    }
+}
+</correct_code>
+
+<buggy_code>
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    Given a positive floating point number, it can be decomposed into
+    and integer part (largest integer smaller than given number) and decimals
+    (leftover part always smaller than 1).
+
+    Return the decimal part of the number.
+    >>> truncateNumber(3.5)
+    0.5
+     */
+    public double truncateNumber(double number) {
+           return number // 1.0;
+    }
+}
+</buggy_code>
+
+<repair_method>
+The error in the original truncate_number function is that it uses the floor division // operator instead of the modulo % operator to obtain the decimal part of the floating-point number. The floor division returns the integer part, not the decimal part.
+To fix the issue, we should replace the // operator with the % operator to correctly return the decimal part of the floating-point number.
+</repair_method>
+
+<correct_code>
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    Given a positive floating point number, it can be decomposed into
+    and integer part (largest integer smaller than given number) and decimals
+    (leftover part always smaller than 1).
+
+    Return the decimal part of the number.
+    >>> truncateNumber(3.5)
+    0.5
+     */
+    public double truncateNumber(double number) {
+           return number % 1.0;
+    }
+}
+</correct_code>
+
+<buggy_code>
+{buggy_code}
+</buggy_code>
+
+<repair_method>

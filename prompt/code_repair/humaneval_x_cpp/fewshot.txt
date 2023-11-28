@@ -1,0 +1,171 @@
+You are a master at debugging code. Please correct the following buggy code.
+
+-buggy code:
+/*
+Check if in given vector of numbers, are any two numbers closer to each other than
+given threshold.
+>>> has_close_elements({1.0, 2.0, 3.0}, 0.5)
+false
+>>> has_close_elements({1.0, 2.8, 3.0, 4.0, 5.0, 2.0}, 0.3)
+true
+*/
+#include<stdio.h>
+#include<vector>
+#include<math.h>
+using namespace std;
+bool has_close_elements(vector<float> numbers, float threshold){
+    int i,j;
+
+    for (i=0;i<numbers.size();i++)
+    for (j=i+1;j<numbers.size();j++)
+    if (abs(numbers[i]-numbers[j])>=threshold)
+    return true;
+
+    return false;
+}
+
+-correct code:
+/*
+Check if in given vector of numbers, are any two numbers closer to each other than
+given threshold.
+>>> has_close_elements({1.0, 2.0, 3.0}, 0.5)
+false
+>>> has_close_elements({1.0, 2.8, 3.0, 4.0, 5.0, 2.0}, 0.3)
+true
+*/
+#include<stdio.h>
+#include<vector>
+#include<math.h>
+using namespace std;
+bool has_close_elements(vector<float> numbers, float threshold){
+    int i,j;
+
+    for (i=0;i<numbers.size();i++)
+    for (j=i+1;j<numbers.size();j++)
+    if (abs(numbers[i]-numbers[j])<threshold)
+    return true;
+
+    return false;
+}
+
+
+-buggy code:
+/*
+Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+separate those group into separate strings and return the vector of those.
+Separate groups are balanced (each open brace is properly closed) and not nested within each other
+Ignore any spaces in the input string.
+>>> separate_paren_groups("( ) (( )) (( )( ))")
+{"()", "(())", "(()())"}
+*/
+#include<stdio.h>
+#include<vector>
+#include<string>
+using namespace std;
+vector<string> separate_paren_groups(string paren_string){
+    vector<string> all_parens;
+    string current_paren;
+    int level=0;
+    char chr;
+    int i;
+    for (i=0;i<paren_string.length();i++)
+    {
+        chr=paren_string[i];
+        if (chr==')')
+        {
+        level+=1;
+        current_paren+=chr;
+        }
+        if (chr=='(')
+        {
+            level-=1;
+            current_paren+=chr;
+            if (level==0){
+                all_parens.push_back(current_paren);
+                current_paren="";
+            }
+        }
+    }
+    return all_parens;
+}
+
+-correct code:
+/*
+Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+separate those group into separate strings and return the vector of those.
+Separate groups are balanced (each open brace is properly closed) and not nested within each other
+Ignore any spaces in the input string.
+>>> separate_paren_groups("( ) (( )) (( )( ))")
+{"()", "(())", "(()())"}
+*/
+#include<stdio.h>
+#include<vector>
+#include<string>
+using namespace std;
+vector<string> separate_paren_groups(string paren_string){
+    vector<string> all_parens;
+    string current_paren;
+    int level=0;
+    char chr;
+    int i;
+    for (i=0;i<paren_string.length();i++)
+    {
+        chr=paren_string[i];
+        if (chr=='(')
+        {
+        level+=1;
+        current_paren+=chr;
+        }
+        if (chr==')')
+        {
+            level-=1;
+            current_paren+=chr;
+            if (level==0){
+                all_parens.push_back(current_paren);
+                current_paren="";
+            }
+        }
+    }
+    return all_parens;
+}
+
+
+-buggy code:
+/*
+Given a positive floating point number, it can be decomposed into
+and integer part (largest integer smaller than given number) and decimals
+(leftover part always smaller than 1).
+
+Return the decimal part of the number.
+>>> truncate_number(3.5)
+0.5
+*/
+#include<stdio.h>
+#include<math.h>
+using namespace std;
+float truncate_number(float number){
+    return number % int(number);
+}
+
+-correct code:
+/*
+Given a positive floating point number, it can be decomposed into
+and integer part (largest integer smaller than given number) and decimals
+(leftover part always smaller than 1).
+
+Return the decimal part of the number.
+>>> truncate_number(3.5)
+0.5
+*/
+#include<stdio.h>
+#include<math.h>
+using namespace std;
+float truncate_number(float number){
+    return number-int(number);
+}
+
+-buggy code:
+{buggy_code}
+
+-correct code:
+{task_description}

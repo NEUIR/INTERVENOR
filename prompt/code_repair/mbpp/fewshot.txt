@@ -1,0 +1,57 @@
+You are a master at debugging code. Please correct the following buggy code.
+
+-buggy code:
+# Write a function to find the similar elements from the given two tuple lists.
+
+def similar_elements(test_tup1, test_tup2):
+    res = set(test_tup1) & set(test_tup2)
+    return res
+
+-correct code:
+# Write a function to find the similar elements from the given two tuple lists.
+
+def similar_elements(test_tup1, test_tup2):
+    res = tuple(set(test_tup1) & set(test_tup2))
+    return (res)
+
+-buggy code:
+# Write a python function to identify non-prime numbers.
+import math
+def is_not_prime(n):
+    result = False
+    for i in range(2,int(math.sqrt(n)) + 1):
+        if n / i == 0:
+            result = True
+    return result
+
+-correct code:
+# Write a python function to identify non-prime numbers.
+import math
+def is_not_prime(n):
+    result = False
+    for i in range(2,int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            result = True
+    return result
+
+
+-buggy code:
+# Write a function to find the largest integers from a given list of numbers using heap queue algorithm.
+import heapq as hq
+def heap_queue_largest(nums,n):
+    largest_nums = hq.nlargest(n, nums)
+    return largest_nums[0]
+
+-correct code:
+# Write a function to find the largest integers from a given list of numbers using heap queue algorithm.
+import heapq as hq
+def heap_queue_largest(nums,n):
+    largest_nums = hq.nlargest(n, nums)
+    return largest_nums
+
+
+-buggy code:
+{buggy_code}
+
+-correct code:
+{task_description}
