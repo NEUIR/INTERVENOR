@@ -1,3 +1,4 @@
+<div align="center">
 <h1 style="text-align: center;">INTERVENOR</h1>
 
 <img src="assets/title.jpg" width="200px">
@@ -7,7 +8,6 @@
  <a href="##Reproduce INTERVENOR">Reproduce INTERVENOR</a> •
  <a href="##Prompts">Prompts</a> •
 </p>
-
 
 </div>
 
