@@ -5,7 +5,7 @@
 
 <p align="center">
  <a href="## Requirements"> Requirements</a> •
- <a href="## Reproduce INTERVENOR">Reproduce INTERVENOR</a> •
+ <a href="## Reproduce">Reproduce INTERVENOR</a> •
  <a href="## Prompts">Prompts</a> •
 </p>
 
@@ -29,7 +29,7 @@ pip install -e human-eval
 
 
 
-## Reproduce INTERVENOR
+## Reproduce
 
 ### 1.Code Generation
 
