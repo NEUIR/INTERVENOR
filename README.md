@@ -4,9 +4,9 @@
 <img src="assets/title.jpg" width="200px">
 
 <p align="center">
- <a href="##Requirements"> Requirements</a> •
- <a href="##Reproduce INTERVENOR">Reproduce INTERVENOR</a> •
- <a href="##Prompts">Prompts</a> •
+ <a href="## Requirements"> Requirements</a> •
+ <a href="## Reproduce INTERVENOR">Reproduce INTERVENOR</a> •
+ <a href="## Prompts">Prompts</a> •
 </p>
 
 </div>
