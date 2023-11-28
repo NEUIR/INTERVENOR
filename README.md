@@ -3,12 +3,6 @@
 
 <img src="assets/title.jpg" width="200px">
 
-<p align="center">
- <a href="## Requirements"> Requirements</a> •
- <a href="## Reproduce">Reproduce INTERVENOR</a> •
- <a href="## Prompts">Prompts</a> •
-</p>
-
 </div>
 
 Source code for paper: <a href='https://arxiv.org/abs/2311.09868'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
