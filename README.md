@@ -11,6 +11,9 @@ Source code for paper: <a href='https://arxiv.org/abs/2311.09868'><img src='http
 
 
 ## Overview
+INTERVENOR conducts an interactive code-repair process, facilitating the collaboration among agents and the code compiler.
+
+In the initial step (**Step A^0**, where 0 signifies the initial turn), we prompt the Code Learner to generate code for the given task. Subsequently, the Code Learner executes the generated code using the code compiler to assess its correctness (**Step B**). Following this, the Code Teacher generates code repair instructions (CoR) based on the bug report and the associated buggy code (**Step C**). These instructions elucidate the reason of the bug, such as ``modified to handle the case where the input decimal is 0``, and include code correction planning, for example, ``we can simply return db0db``. Such instructions are informative and enhance the guidance for the Code Learner. Ultimately, the Code Learner follows the chain-of-repair (CoR) to rectify the code and subsequently resubmits the corrected version to the compiler for execution in the subsequent turn ((**Step A^i**), where i≥1 denotes the code repair process). The A^i, B, and C steps are iterated sequentially until either the code meets the compiler's estimation or the maximum turn limit is reached.
 ![model](assets/model.gif)
 ## Requirements
 
