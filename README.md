@@ -10,6 +10,8 @@ Source code for paper: <a href='https://arxiv.org/abs/2311.09868'><img src='http
 
 
 
+## Overview
+![model](assets/model.gif)
 ## Requirements
 
 Install dependencies:
