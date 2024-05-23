@@ -156,7 +156,7 @@ If you use our code or our data for your research, feel free to cite our publica
       author={Hanbin Wang and Zhenghao Liu and Shuo Wang and Ganqu Cui and Ning Ding and Zhiyuan Liu and Ge Yu},
       year={2023},
       eprint={2311.09868},
-      archivePrefix={arXiv},
+      archivePrefix={ACL 2024},
       primaryClass={cs.SE}
 }
 ```
