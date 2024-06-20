@@ -151,13 +151,11 @@ For additional prompts, please refer to this [directory](./prompt) and our [pape
 If you use our code or our data for your research, feel free to cite our publication:
 
 ```
-@misc{wang2023intervenor,
-      title={INTERVENOR: Prompt the Coding Ability of Large Language Models with the Interactive Chain of Repairing}, 
+@inproceedings{wang2024intervenor,
+      title={INTERVENOR: Prompt the Coding Ability of Large Language Models with the Interactive Chain of Repair}, 
       author={Hanbin Wang and Zhenghao Liu and Shuo Wang and Ganqu Cui and Ning Ding and Zhiyuan Liu and Ge Yu},
-      year={2023},
-      eprint={2311.09868},
-      archivePrefix={ACL 2024},
-      primaryClass={cs.SE}
+      booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics},
+      year={2024}  
 }
 ```
 
