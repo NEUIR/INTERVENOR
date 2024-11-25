@@ -159,7 +159,7 @@ def code_reapiring(problems,results,args):
                 repair_method = results[task_id]["method"]
                 prompt = get_repair_prompt(buggy_code,error_message,repair_method,code_signature)
                 # print(prompt)
-                response, usage = generator(code_signature, args.max_tokens, args.temperature, stop)
+                response, usage = generator(prompt, args.max_tokens, args.temperature, stop)
                 # print("--------------------response-------------------")
                 # print(response)
                 sample = {"task_id": task_id, "completion": response,
